@@ -6,21 +6,33 @@ function getCompChoice(){
     return (answers[choice]);
 }
 
-console.log(getCompChoice());
+let compChoice = getCompChoice();
 
 // Ask the user to choose rock, paper, or scissors;
 //     This needs to NOT be case sensitive;
 // Store that result in a variable called playerChoice;
 function getPlayerChoice(){
     let playerChoice = prompt("Pick rock, paper, or scissors");
-    return playerChoice.toLowerCase()
+    return playerChoice.toLowerCase();
 }
 
-console.log(getPlayerChoice());
+let playerChoice = getPlayerChoice();
+console.log("Computer chooses " + compChoice + ", player chooses " + playerChoice);
 
 // Compare the computer's choice to the user's choice;
-// function result(){
-// }
+function getResult(){
+    if (compChoice == "rock"){
+        if (playerChoice === "rock"){
+            return "It's a tie!"
+        } else if (playerChoice === "paper"){
+            return "You win!"
+        } else {return "You lose!"}
+        } else {return "XXXX"}
+        }
+
+let result = getResult();
+
+console.log(result);
 //     If the computer chose "Rock", check:
 //         If the player chose "Rock", log "It's a tie!";
 //         If the player chose "Paper", log "You win!";

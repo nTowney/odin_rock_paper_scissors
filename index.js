@@ -21,14 +21,26 @@ console.log("Computer chooses " + compChoice + ", player chooses " + playerChoic
 
 // Compare the computer's choice to the user's choice;
 function getResult(){
-    if (compChoice == "rock"){
+    if (compChoice === "rock"){
         if (playerChoice === "rock"){
             return "It's a tie!"
         } else if (playerChoice === "paper"){
             return "You win!"
-        } else {return "You lose!"}
-        } else {return "XXXX"}
-        }
+        } else {return "The computer wins!"}
+    } else if (compChoice === "paper"){
+        if (playerChoice === "rock"){
+            return "The computer wins!";
+        } else if (playerChoice === "paper"){
+            return "It's a tie!";
+        } else {return "You win!"};
+    } else {
+        if (playerChoice === "rock"){
+            return "You win!"
+        } else if (playerChoice === "paper"){
+            return "The computer wins!"
+        } else {return "It's a tie!"}
+    }
+}
 
 let result = getResult();
 

@@ -60,7 +60,16 @@ let result = getResult();
 console.log(result);
 
 // I'm going to try and set a variable for compScore and playerScore;
+let compScore = 0;
+let playerScore = 0;
+
 // if the result is "you win", add one to playerScore;
+
+if (result === "You win!"){
+    playerScore ++
+}
+
+console.log(playerScore);
 // if the result is "the computer wins", add one to compScore;
 // if the result is "tie", add one to tie maybe? Or do nothing
 
@@ -78,3 +87,8 @@ playRound();
 playRound();
 playRound();
 playRound();
+playRound();
+// playRound();
+// playRound();
+// playRound();
+// playRound();

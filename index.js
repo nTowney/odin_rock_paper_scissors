@@ -1,4 +1,10 @@
-function playRound(){
+function game(){
+// I'm going to try and set a variable for compScore and playerScore;
+let compScore = 0;
+let playerScore = 0;
+let tieScore = 0;
+
+for (i=0; i<5; i++){
 // Have the computer pick rock, paper, or scissors at random;
 // Store that result in a variable called compChoice;
 function getCompChoice(){
@@ -59,10 +65,7 @@ let result = getResult();
 
 console.log(result);
 
-// I'm going to try and set a variable for compScore and playerScore;
-let compScore = 0;
-let playerScore = 0;
-let tieScore = 0;
+
 
 // if the result is "you win", add one to playerScore;
 
@@ -73,12 +76,17 @@ if (result === "You win!"){
 } else {
     tieScore ++
 }
-
+}
 console.log("Player Score: " + playerScore);
 console.log("Computer Score: " + compScore);
 console.log("Tie Games: " + tieScore);
 // if the result is "the computer wins", add one to compScore;
 // if the result is "tie", add one to tie maybe? Or do nothing
+if (playerScore > compScore && playerScore >= tieScore){
+    console.log("You beat the computer!")
+} else if (compScore > playerScore && compScore >= tieScore)
+    {console.log("You've been beaten by the computer!")
+} else {console.log("It's a tie!")}
 
 
 
@@ -89,7 +97,4 @@ console.log("Tie Games: " + tieScore);
 // After the game ends, declare a total winner;
 //     Provide stats (i.e., computer won x, player won y);
 }
-playRound();
-playRound();
-playRound();
-playRound();
+game();

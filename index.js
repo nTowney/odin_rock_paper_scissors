@@ -3,8 +3,10 @@ function game(){
 let compScore = 0;
 let playerScore = 0;
 let tieScore = 0;
+let totalScore = compScore + playerScore;
 
-for (i=0; i<5; i++){
+
+for (i=0; i <5; i++){
 // Have the computer pick rock, paper, or scissors at random;
 // Store that result in a variable called compChoice;
 function getCompChoice(){
@@ -80,6 +82,7 @@ if (result === "You win!"){
 console.log("Player Score: " + playerScore);
 console.log("Computer Score: " + compScore);
 console.log("Tie Games: " + tieScore);
+console.log("Total Games: " + totalScore);
 // if the result is "the computer wins", add one to compScore;
 // if the result is "tie", add one to tie maybe? Or do nothing
 if (playerScore > compScore && playerScore >= tieScore){

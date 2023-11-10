@@ -1,14 +1,12 @@
 function game(){
-// I'm going to try and set a variable for compScore and playerScore;
+//variables set for each score to track
+
 let compScore = 0;
 let playerScore = 0;
 let tieScore = 0;
 
-
-
-for (i=0; compScore < 3; i++){
-// Have the computer pick rock, paper, or scissors at random;
-// Store that result in a variable called compChoice;
+//loops the rounds until best of 5
+for (i=0; (compScore < 3) && (playerScore <3); i++){
 function getCompChoice(){
     let answers = ["rock", "paper", "scissors"];
     let choice = Math.floor(Math.random()*answers.length);
@@ -16,10 +14,8 @@ function getCompChoice(){
 }
 
 let compChoice = getCompChoice();
+// let compChoice = "rock"; for troubleshooting
 
-// Ask the user to choose rock, paper, or scissors;
-//     This needs to NOT be case sensitive;
-// Store that result in a variable called playerChoice;
 function getPlayerChoice(){
     let playerChoice = prompt("Pick rock, paper, or scissors");
     return playerChoice.toLowerCase();
@@ -28,19 +24,7 @@ function getPlayerChoice(){
 let playerChoice = getPlayerChoice();
 console.log("Computer chooses " + compChoice + ", player chooses " + playerChoice);
 
-// Compare the computer's choice to the user's choice;
-//     If the computer chose "Rock", check:
-//         If the player chose "Rock", log "It's a tie!";
-//         If the player chose "Paper", log "You win!";
-//         If the player chose "Scissors", log "The computer wins!";
-//     If the computer chose "Paper", check:
-//         If the player chose "Rock", log "The computer wins!";
-//         If the player chose "Paper", log "It's a tie!";
-//         If the player chose "Scissors", log "You win!";
-//     If the computer chose "Scissors", check:
-//         If the player chose "Rock", log "You win!";
-//         If the player chose "Paper", log "The computer wins!";
-//         If the player chose "Scissors", log "It's a tie!";
+//determines result of round
 function getResult(){
     if (compChoice === "rock"){
         if (playerChoice === "rock"){
@@ -67,10 +51,7 @@ let result = getResult();
 
 console.log(result);
 
-
-
-// if the result is "you win", add one to playerScore;
-
+//adds each round win to the score variables
 if (result === "You win!"){
     playerScore ++;
 } else if (result === "The computer wins!"){
@@ -79,29 +60,18 @@ if (result === "You win!"){
     tieScore ++;
 }
 }
-let scoredGames = compScore + playerScore;
+
 let totalGames = compScore + playerScore + tieScore;
 
-console.log("Player Score: " + playerScore);
-console.log("Computer Score: " + compScore);
-console.log("Tie Games: " + tieScore);
-console.log("Scored Games: " + scoredGames);
+console.log(("Player Score: " + playerScore) + (", Computer Score: " + compScore) + (", Tie Games: " + tieScore));
 console.log("Total Games: " + totalGames);
-// if the result is "the computer wins", add one to compScore;
-// if the result is "tie", add one to tie maybe? Or do nothing
-if (playerScore > compScore && playerScore >= tieScore){
-    console.log("You beat the computer!")
-} else if (compScore > playerScore && compScore >= tieScore)
-    {console.log("You've been beaten by the computer!")
-} else {console.log("It's a tie!")}
 
+//reports final results
+if (playerScore > compScore){
+    console.log("You beat the computer!");
+} else {
+    console.log("You've been beaten by the computer!");
+}
 
-
-// If the player wins, add a point to the player count;
-// If the computer wins, add a point to the computer count;
-// If the result is a tie, add a point to the tie count;
-//     The game is over when a total of 5 wins are accumulated;
-// After the game ends, declare a total winner;
-//     Provide stats (i.e., computer won x, player won y);
 }
 game();

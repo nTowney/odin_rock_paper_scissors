@@ -8,13 +8,16 @@ let tieScore = 0;
 //loops the rounds until best of 5
 for (i=0; (compScore < 3) && (playerScore <3); i++){
 function getCompChoice(){
-    let answers = ["rock", "paper", "scissors"];
+    let answers = ['rock', "paper", "scissors"];
     let choice = Math.floor(Math.random()*answers.length);
     return (answers[choice]);
 }
 
-let compChoice = getCompChoice();
-// let compChoice = "rock"; for troubleshooting
+//for game:
+// let compChoice = getCompChoice();
+//for troubleshooting:
+let compChoice = "rock";
+
 
 function getPlayerChoice(){
     let playerChoice = prompt("Pick rock, paper, or scissors");
@@ -68,7 +71,9 @@ console.log("Total Games: " + totalGames);
 
 //reports final results
 if (playerScore > compScore){
-    console.log("You beat the computer!");
+    // console.log("You beat the computer!");
+    let displayedResult = document.getElementById("result");
+    displayedResult.innerText = "You beat the computer!";
 } else {
     console.log("You've been beaten by the computer!");
 }

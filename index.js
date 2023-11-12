@@ -14,9 +14,9 @@ function getCompChoice(){
 }
 
 //for game:
-// let compChoice = getCompChoice();
+let compChoice = getCompChoice();
 //for troubleshooting:
-let compChoice = "rock";
+// let compChoice = "paper";
 
 
 function getPlayerChoice(){
@@ -66,16 +66,22 @@ if (result === "You win!"){
 
 let totalGames = compScore + playerScore + tieScore;
 
+let outcome = document.getElementById("outcome");
+
 console.log(("Player Score: " + playerScore) + (", Computer Score: " + compScore) + (", Tie Games: " + tieScore));
 console.log("Total Games: " + totalGames);
 
+outcome.innerHTML = "Player Score: " + playerScore + ", Computer Score: " + compScore + ", Tie Games: " + tieScore + ".";
+
 //reports final results
 if (playerScore > compScore){
-    // console.log("You beat the computer!");
+    console.log("You beat the computer!");
     let displayedResult = document.getElementById("result");
-    displayedResult.innerText = "You beat the computer!";
+    displayedResult.innerHTML = "You beat the computer!";
 } else {
     console.log("You've been beaten by the computer!");
+    let displayedResult = document.getElementById("result");
+    displayedResult.innerHTML = "You've been beaten by the computer!";
 }
 
 }

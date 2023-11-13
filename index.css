@@ -3,6 +3,10 @@ html{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/* *{
+    border: 1px solid aqua;
+} */
+
 .header{
     text-align: center;
     display: flex;
@@ -11,6 +15,31 @@ html{
     justify-content: center;
     color: aqua;
     font-weight: 200;
+    align-items: center;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+button{
+    width: 125px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: 4px solid;
+    font-weight: 800;
+    color: aqua;
+    background-color: rgba(0, 0, 128, 0.765);
+}
+
+.results{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 p{
@@ -20,4 +49,5 @@ p{
     justify-content: center;
     color: aqua;
     font-weight: 400;
+    align-items: center;
 }

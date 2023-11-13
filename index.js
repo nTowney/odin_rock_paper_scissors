@@ -18,6 +18,7 @@ let compChoice = getCompChoice();
 //for troubleshooting:
 // let compChoice = "paper";
 
+let buttonChoice = document.getElementById("buttonChoice");
 
 function getPlayerChoice(){
     let playerChoice = prompt("Pick rock, paper, or scissors");
